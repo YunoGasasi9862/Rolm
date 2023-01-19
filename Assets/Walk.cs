@@ -8,6 +8,8 @@ public class Walk : MonoBehaviour
     private bool once;
     private Animator anim;
     private Rigidbody2D rb;
+    private bool _shouldWalk;
+    [SerializeField] float _walkingspeed;
     private void Start()
     {
         anim= GetComponent<Animator>();
@@ -35,7 +37,7 @@ public class Walk : MonoBehaviour
         entry.callback.AddListener((HoldFunc) =>
         {
             anim.SetBool("Walk", true);
-            rb.AddForce(Vector2.right * 1000f * Time.deltaTime, ForceMode2D.Force);
+            _shouldWalk = true;
 
         });
         trigger.triggers.Add(entry);
@@ -46,13 +48,27 @@ public class Walk : MonoBehaviour
         entry2.callback.AddListener((ReleaseFunc) =>
         {
             anim.SetBool("Walk", false);
-            Vector2 velocity = rb.velocity;
-            velocity.x = 0f;
-            rb.velocity = velocity;
+            _shouldWalk = false;
+          
 
 
         });
 
         trigger2.triggers.Add(entry2);
+    }
+
+    private void FixedUpdate()
+    {
+        if(_shouldWalk)
+        {
+            rb.velocity = new Vector2(_walkingspeed * Time.deltaTime, 0f);
+
+        }
+        else
+        {
+            Vector2 velocity = rb.velocity;
+            velocity.x = 0f;
+            rb.velocity = velocity;
+        }
     }
 }
