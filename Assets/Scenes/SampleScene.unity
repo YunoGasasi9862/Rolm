@@ -655,6 +655,7 @@ MonoBehaviour:
   - {fileID: 74515638}
   - {fileID: 691344546}
   - {fileID: 1065157913}
+  _walk: {fileID: 1067171259}
 --- !u!1 &691344544
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +943,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BG1: {fileID: 470812497}
   _BG2: {fileID: 1165890114}
+--- !u!114 &1067171259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5907476312837196896, guid: 9760b330736fdcb4aa52c5c7e8268f6f, type: 3}
+  m_PrefabInstance: {fileID: 5907476313583235548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067171256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8081fa8eb25d19746a85a2e03f6474cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1165890112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,6 +1201,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5907476312837196896, guid: 9760b330736fdcb4aa52c5c7e8268f6f, type: 3}
+      propertyPath: _Rc
+      value: 
+      objectReference: {fileID: 581574199}
     - target: {fileID: 5907476312837196896, guid: 9760b330736fdcb4aa52c5c7e8268f6f, type: 3}
       propertyPath: _walkingspeed
       value: 100

@@ -8,8 +8,10 @@ public class Walk : MonoBehaviour
     private bool once;
     private Animator anim;
     private Rigidbody2D rb;
-    private bool _shouldWalk;
+    public static bool _shouldWalk;
     [SerializeField] float _walkingspeed;
+    [SerializeField] RandomColor _Rc;
+    public static EventTrigger trigger, trigger2; 
     private void Start()
     {
         anim= GetComponent<Animator>();
@@ -27,29 +29,35 @@ public class Walk : MonoBehaviour
         }
     }
 
-    private void AddEventToBTN(Button g)
+    public void AddEventToBTN(Button g)
     {
   
 
-        EventTrigger trigger = g.GetComponent<EventTrigger>();
+        trigger = g.GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerDown;
         entry.callback.AddListener((HoldFunc) =>
         {
+            //call a fucntion or write statements
             anim.SetBool("Walk", true);
             _shouldWalk = true;
 
         });
         trigger.triggers.Add(entry);
 
-        EventTrigger trigger2 = g.GetComponent<EventTrigger>();
+         trigger2 = g.GetComponent<EventTrigger>();
         EventTrigger.Entry entry2= new EventTrigger.Entry();
         entry2.eventID= EventTriggerType.PointerUp;
         entry2.callback.AddListener((ReleaseFunc) =>
         {
             anim.SetBool("Walk", false);
             _shouldWalk = false;
-          
+            _Rc.GenerateColor();
+            trigger.triggers.RemoveRange(0, trigger.triggers.Count);
+            trigger2.triggers.RemoveRange(0, trigger2.triggers.Count);
+
+            AddEventToBTN(RandomColor.exportBTN);
+
 
 
         });
