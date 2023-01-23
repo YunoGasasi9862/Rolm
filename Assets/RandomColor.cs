@@ -7,10 +7,11 @@ public class RandomColor : MonoBehaviour
 {
     [SerializeField] Button[] btns=new Button[3];
     public static Button exportBTN;
+    public static Button[] exportRedBtns = new Button[2];
     private float _timecount=0;
     private bool _randomTime = false;
     [SerializeField] Walk _walk;
-
+    private int count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +33,12 @@ public class RandomColor : MonoBehaviour
             else
             {
                 btns[i].GetComponent<Image>().color = new Color32(229, 40, 215, 255);
-
+                exportRedBtns[count] = btns[i];
+                count++;
             }
         }
+
+        count = 0;
 
     }
 
@@ -60,7 +64,6 @@ public class RandomColor : MonoBehaviour
     {
         while (_timecount < RR * 3)
         {
-            Debug.Log(_timecount);
             _timecount += Time.deltaTime;
             yield return null;
         }
