@@ -35,7 +35,7 @@ public class Walk : MonoBehaviour
 
         }
 
-        if(RandomColor.exportRedBtns.Length>0 && !redOnce)
+       if(RandomColor.exportRedBtns[0]!=null && RandomColor.exportRedBtns[1] != null && !redOnce)
         {
            AddEventRedBtns();
             redOnce = true;
@@ -52,20 +52,26 @@ public class Walk : MonoBehaviour
 
             }
         }
+      
 
     }
 
     public void AddEventToBTN(Button g)
     {
-        if (trigger3 != null)
-        {
-            trigger3.triggers.RemoveRange(0, trigger3.triggers.Count);
+         if(trigger3!=null)
+         {
+             trigger3.triggers.RemoveRange(0, trigger3.triggers.Count);
 
-        }
-        if(trigger4!=null)
-        {
-            trigger4.triggers.RemoveRange(0, trigger4.triggers.Count);
-        }
+         }
+
+         if(trigger4!=null)
+         {
+             trigger4.triggers.RemoveRange(0, trigger4.triggers.Count);
+
+         }
+
+
+        
 
         trigger = g.GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
@@ -73,6 +79,7 @@ public class Walk : MonoBehaviour
         entry.callback.AddListener((HoldFunc) =>
         {
             //call a fucntion or write statements
+
             anim.SetBool("Walk", true);
             _shouldWalk = true;
 
@@ -98,6 +105,7 @@ public class Walk : MonoBehaviour
 
         trigger2.triggers.Add(entry2);
 
+        AddEventRedBtns();
 
 
     }
@@ -113,6 +121,7 @@ public class Walk : MonoBehaviour
             entry3.eventID = EventTriggerType.PointerDown;
             entry3.callback.AddListener((PenaltyHold) =>
             {
+               
                 decrease = true;
             });
             trigger3.triggers.Add(entry3);
@@ -121,9 +130,9 @@ public class Walk : MonoBehaviour
             entry4.eventID = EventTriggerType.PointerUp;
             entry4.callback.AddListener((PenaltyRelease) =>
             {
+ 
                 decrease = false;
-                trigger3.triggers.RemoveRange(0, trigger3.triggers.Count);
-                trigger4.triggers.RemoveRange(0, trigger4.triggers.Count);
+
             });
             trigger4.triggers.Add(entry4);
         }

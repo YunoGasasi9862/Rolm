@@ -51,8 +51,17 @@ public class RandomColor : MonoBehaviour
             _randomTime = false;
            StartCoroutine(CountTime(RandomNumber));
             GenerateColor();
-            Walk.trigger.triggers.RemoveRange(0, Walk.trigger.triggers.Count);
-            Walk.trigger2.triggers.RemoveRange(0, Walk.trigger2.triggers.Count);
+
+            if(Walk.trigger!=null)
+            {
+                Walk.trigger.triggers.RemoveRange(0, Walk.trigger.triggers.Count);
+
+            }
+            if(Walk.trigger2!=null)
+            {
+                Walk.trigger2.triggers.RemoveRange(0, Walk.trigger2.triggers.Count);
+
+            }
             Walk._shouldWalk = false;
             _walk.AddEventToBTN(exportBTN);
 
