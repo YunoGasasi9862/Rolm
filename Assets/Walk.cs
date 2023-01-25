@@ -70,8 +70,18 @@ public class Walk : MonoBehaviour
 
          }
 
+        if (trigger != null)
+        {
+            trigger.triggers.RemoveRange(0, trigger.triggers.Count);
 
-        
+        }
+
+        if (trigger2 != null)
+        {
+            trigger2.triggers.RemoveRange(0, trigger2.triggers.Count);
+
+        }
+
 
         trigger = g.GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
@@ -94,8 +104,8 @@ public class Walk : MonoBehaviour
             anim.SetBool("Walk", false);
             _shouldWalk = false;
             _Rc.GenerateColor();
-            trigger.triggers.RemoveRange(0, trigger.triggers.Count);
-            trigger2.triggers.RemoveRange(0, trigger2.triggers.Count);
+
+            
 
             AddEventToBTN(RandomColor.exportBTN);
 

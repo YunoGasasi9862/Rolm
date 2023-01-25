@@ -23,12 +23,14 @@ public class RandomColor : MonoBehaviour
     public void GenerateColor()
     {
         int blueRandom = Random.Range(0, btns.Length);
+        Debug.Log(blueRandom);
+        count = 0;
         for (int i = 0; i < btns.Length; i++)
         {
             if (i == blueRandom)
             {
-                btns[i].GetComponent<Image>().color = new Color32(22, 123, 221, 255);
-                exportBTN = btns[i];
+                btns[blueRandom].GetComponent<Image>().color = new Color32(22, 123, 221, 255);
+                exportBTN = btns[blueRandom];
             }
             else
             {
@@ -38,7 +40,6 @@ public class RandomColor : MonoBehaviour
             }
         }
 
-        count = 0;
 
     }
 
@@ -64,6 +65,7 @@ public class RandomColor : MonoBehaviour
             }
             Walk._shouldWalk = false;
             _walk.AddEventToBTN(exportBTN);
+            _walk.AddEventRedBtns();
 
         }
 
