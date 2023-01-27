@@ -12,6 +12,7 @@ public class RandomColor : MonoBehaviour
     private bool _randomTime = false;
     [SerializeField] Walk _walk;
     private int count = 0;
+    [SerializeField] Animator Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,6 @@ public class RandomColor : MonoBehaviour
     public void GenerateColor()
     {
         int blueRandom = Random.Range(0, btns.Length);
-        Debug.Log(blueRandom);
         count = 0;
         for (int i = 0; i < btns.Length; i++)
         {
@@ -49,7 +49,6 @@ public class RandomColor : MonoBehaviour
         if(_randomTime)
         {
             int RandomNumber = Random.Range(6, 16);
-            _randomTime = false;
            StartCoroutine(CountTime(RandomNumber));
             GenerateColor();
 
@@ -63,9 +62,25 @@ public class RandomColor : MonoBehaviour
                 Walk.trigger2.triggers.RemoveRange(0, Walk.trigger2.triggers.Count);
 
             }
+
+            if (Walk.trigger3 != null)
+            {
+                Walk.trigger3.triggers.RemoveRange(0, Walk.trigger3.triggers.Count);
+
+            }
+            if (Walk.trigger4 != null)
+            {
+                Walk.trigger4.triggers.RemoveRange(0, Walk.trigger4.triggers.Count);
+
+            }
+
             Walk._shouldWalk = false;
+            Player.SetBool("Walk", false);
+            Walk.decrease = false;
             _walk.AddEventToBTN(exportBTN);
             _walk.AddEventRedBtns();
+            
+            _randomTime = false;
 
         }
 

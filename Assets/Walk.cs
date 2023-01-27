@@ -15,8 +15,8 @@ public class Walk : MonoBehaviour
     public static EventTrigger trigger3, trigger4;
     public static int walkCount=0;
     public static int penaltyCount=0;
-    private bool decrease = false;
-    private float _penaltyCountTime = 0;
+    public static bool decrease = false;
+    public static float _penaltyCountTime = 0;
     private bool redOnce = false;
     
     private void Start()
@@ -47,7 +47,6 @@ public class Walk : MonoBehaviour
             if (_penaltyCountTime > .9f)
             {
                 penaltyCount--;
-                Debug.Log(penaltyCount);
                 _penaltyCountTime = 0;
 
             }
@@ -91,6 +90,7 @@ public class Walk : MonoBehaviour
             //call a fucntion or write statements
 
             anim.SetBool("Walk", true);
+            decrease = false;
             _shouldWalk = true;
 
         });
@@ -108,6 +108,8 @@ public class Walk : MonoBehaviour
             
 
             AddEventToBTN(RandomColor.exportBTN);
+            decrease = false;
+            AddEventRedBtns();
 
 
 

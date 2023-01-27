@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BG1
   - BG2
+  - Pen
   layers:
   - Default
   - TransparentFX
