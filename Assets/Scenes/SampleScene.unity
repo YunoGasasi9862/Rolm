@@ -1349,7 +1349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &745720940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3198,6 +3198,10 @@ PrefabInstance:
       propertyPath: _Rc
       value: 
       objectReference: {fileID: 581574199}
+    - target: {fileID: 5907476312837196896, guid: 9760b330736fdcb4aa52c5c7e8268f6f, type: 3}
+      propertyPath: PenaltyUI
+      value: 
+      objectReference: {fileID: 745720939}
     - target: {fileID: 5907476312837196896, guid: 9760b330736fdcb4aa52c5c7e8268f6f, type: 3}
       propertyPath: _walkingspeed
       value: 100

@@ -18,11 +18,16 @@ public class Walk : MonoBehaviour
     public static bool decrease = false;
     public static float _penaltyCountTime = 0;
     private bool redOnce = false;
-    
+    private float vibration;
+    [SerializeField] GameObject PenaltyUI;
+    float _timer;
+
+
     private void Start()
     {
         anim= GetComponent<Animator>();
         rb= GetComponent<Rigidbody2D>();
+        PenaltyUI.SetActive(false);
     }
 
     void Update()
@@ -43,11 +48,27 @@ public class Walk : MonoBehaviour
 
         if (decrease)
         {
+            _timer+= Time.deltaTime;
+            if (_timer >= .5f)
+            {
+                PenaltyUI.SetActive(true);
+            }
+
+            vibration += Time.deltaTime;
+
+            if(vibration>10f)
+            {
+                Handheld.Vibrate();
+            }
+
+
+
             _penaltyCountTime += Time.deltaTime;
             if (_penaltyCountTime > .9f)
             {
                 penaltyCount--;
                 _penaltyCountTime = 0;
+                _timer = 0;
 
             }
         }
@@ -135,6 +156,8 @@ public class Walk : MonoBehaviour
             {
                
                 decrease = true;
+               
+             
             });
             trigger3.triggers.Add(entry3);
             trigger4 = RandomColor.exportRedBtns[i].GetComponent<EventTrigger>();
@@ -144,6 +167,7 @@ public class Walk : MonoBehaviour
             {
  
                 decrease = false;
+                vibration = 0;
 
             });
             trigger4.triggers.Add(entry4);
