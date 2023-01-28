@@ -7,6 +7,8 @@ TagManager:
   - BG1
   - BG2
   - Pen
+  - RBTN
+  - BTN
   layers:
   - Default
   - TransparentFX

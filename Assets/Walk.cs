@@ -18,7 +18,7 @@ public class Walk : MonoBehaviour
     public static bool decrease = false;
     public static float _penaltyCountTime = 0;
     private bool redOnce = false;
-    private float vibration;
+    public static float vibration;
     [SerializeField] GameObject PenaltyUI;
     float _timer;
 
@@ -72,6 +72,8 @@ public class Walk : MonoBehaviour
 
             }
         }
+
+
       
 
     }
@@ -125,12 +127,15 @@ public class Walk : MonoBehaviour
             anim.SetBool("Walk", false);
             _shouldWalk = false;
             _Rc.GenerateColor();
+            decrease = false;
 
-            
+
 
             AddEventToBTN(RandomColor.exportBTN);
-            decrease = false;
+
+
             AddEventRedBtns();
+
 
 
 
@@ -170,6 +175,8 @@ public class Walk : MonoBehaviour
                 vibration = 0;
 
             });
+
+          
             trigger4.triggers.Add(entry4);
         }
     }
