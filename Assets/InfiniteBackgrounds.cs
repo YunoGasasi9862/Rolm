@@ -23,9 +23,9 @@ public class InfiniteBackgrounds : MonoBehaviour
         float distance = pos.transform.position.x * (parallexEffect);
         transform.position = new Vector3(distance + startPos, transform.position.y, transform.position.z);  //for parallex
 
-        if(temp > startPos + length+25)
+        if(temp > startPos + length)
         {
-            startPos += length;
+            startPos += 1.898f*length;
         }
     }
 }
