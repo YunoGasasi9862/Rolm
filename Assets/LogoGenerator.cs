@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LogoGenerator : MonoBehaviour
 {
-    private bool isGenerated = false;
+    public static bool isGenerated = false;
     [SerializeField] GameObject Player;
     [SerializeField] float minX, maxX;
     [SerializeField] GameObject Logo;
