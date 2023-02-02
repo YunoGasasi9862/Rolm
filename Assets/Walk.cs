@@ -9,7 +9,7 @@ public class Walk : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     public static bool _shouldWalk;
-    [SerializeField] float _walkingspeed;
+   public static float _walkingspeed=100;
     [SerializeField] RandomColor _Rc;
     public static EventTrigger trigger, trigger2;
     public static EventTrigger trigger3, trigger4;
@@ -185,7 +185,17 @@ public class Walk : MonoBehaviour
     {
         if(_shouldWalk)
         {
-            rb.velocity = new Vector2(_walkingspeed * Time.deltaTime, 0f);
+            if(!BTNCheck.running)
+            {
+                _walkingspeed = 100.0f;
+                rb.velocity = new Vector2(_walkingspeed * Time.deltaTime, 0f);
+
+            }
+            else
+            {
+                rb.velocity = new Vector2(_walkingspeed * Time.deltaTime, 0f);
+
+            }
 
         }
         else
@@ -198,6 +208,11 @@ public class Walk : MonoBehaviour
 
     public void StepCount()
     {
-        walkCount++;
+        if(!BTNCheck.running)
+        {
+                    walkCount++;
+
+        }
+      
     }
 }

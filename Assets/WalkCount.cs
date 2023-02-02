@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class WalkCount : MonoBehaviour
 {
     private Text _count;
-
+    private int _oldsteps;
     private void Start()
     {
         _count= GetComponent<Text>();   
@@ -14,6 +14,18 @@ public class WalkCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _count.text = Walk.walkCount.ToString("0");
+        if(!BTNCheck.running)
+        {
+            _count.text = Walk.walkCount.ToString("0");
+
+        }
+        else
+        {
+            _oldsteps= Walk.walkCount;
+            _oldsteps += (int) BTNCheck.factor;
+            _count.text = _oldsteps.ToString("0");
+            Walk.walkCount = _oldsteps;
+            Walk._walkingspeed = 100 * BTNCheck.factor/2  ;
+        }
     }
 }

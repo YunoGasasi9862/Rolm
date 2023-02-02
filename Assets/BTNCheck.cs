@@ -10,6 +10,8 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     private string currentTag;
     private Vector2 _BTNtransform;
     [SerializeField] Canvas canv;
+    public static float factor = 1f;
+    public static bool running = false;
     private void Start()
     {
         
@@ -51,6 +53,7 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     }
     public void OnDrag(PointerEventData data)
     {
+        running = true;
         Vector2 position;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             (RectTransform)canv.transform, data.position,
@@ -61,17 +64,21 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
         
       
 
-         if(position.y < _BTNtransform.y+20 && position.y > _BTNtransform.y -20 && position.x > _BTNtransform.x - 200)
+         if(position.y < _BTNtransform.y+15 && position.y > _BTNtransform.y -15 && position.x > _BTNtransform.x - 200 && position.x<=_BTNtransform.x)
         {
             transform.position = canv.transform.TransformPoint(position);
         }
 
+
+         factor=(Mathf.Abs(position.x- _BTNtransform.x)/100.0f) +1;
+        
         //this is the way you set position on canvas
     }
 
     public void OnEndDrag(PointerEventData data)
     {
         transform.position = canv.transform.TransformPoint(_BTNtransform);
+        running = false;
     }
 
 }
