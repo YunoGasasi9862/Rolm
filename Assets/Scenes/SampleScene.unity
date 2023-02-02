@@ -1902,6 +1902,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1455058084}
     m_Modifications:
+    - target: {fileID: 3587848709240227857, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587848709240227859, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587848709240227859, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587848709240227860, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 1455058083}
+    - target: {fileID: 3587848709240227860, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: buttonPressed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3587848709335716666, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
       propertyPath: m_Name
       value: Panel
@@ -1998,6 +2018,14 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1067171261}
+    - target: {fileID: 3587848709411674543, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 1455058083}
+    - target: {fileID: 3587848709894277555, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 1455058083}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
