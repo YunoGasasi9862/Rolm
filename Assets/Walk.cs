@@ -145,6 +145,7 @@ public class Walk : MonoBehaviour
 
         AddEventRedBtns();
 
+    
 
     }
 
@@ -160,6 +161,9 @@ public class Walk : MonoBehaviour
             entry3.callback.AddListener((PenaltyHold) =>
             {
                
+                anim.SetBool("Walk", true);
+
+                _shouldWalk = true;
                 decrease = true;
                
              
@@ -170,7 +174,8 @@ public class Walk : MonoBehaviour
             entry4.eventID = EventTriggerType.PointerUp;
             entry4.callback.AddListener((PenaltyRelease) =>
             {
- 
+                anim.SetBool("Walk", false);
+                _shouldWalk = false;
                 decrease = false;
                 vibration = 0;
 
@@ -183,9 +188,10 @@ public class Walk : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_shouldWalk)
+
+        if (_shouldWalk)
         {
-            if(!BTNCheck.running)
+            if (!BTNCheck.running)
             {
                 _walkingspeed = 100.0f;
                 rb.velocity = new Vector2(_walkingspeed * Time.deltaTime, 0f);
@@ -193,13 +199,20 @@ public class Walk : MonoBehaviour
             }
             else
             {
-                rb.velocity = new Vector2(_walkingspeed * Time.deltaTime, 0f);
+
+                if(BTNCheck.runForRed || BTNCheck.running)
+                {
+                    rb.velocity = new Vector2(_walkingspeed * Time.deltaTime, 0f);
+
+                }
 
             }
 
         }
         else
         {
+
+        
             Vector2 velocity = rb.velocity;
             velocity.x = 0f;
             rb.velocity = velocity;

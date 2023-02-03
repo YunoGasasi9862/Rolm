@@ -21,11 +21,16 @@ public class WalkCount : MonoBehaviour
         }
         else
         {
-            _oldsteps= Walk.walkCount;
-            _oldsteps += (int) BTNCheck.factor;
-            _count.text = _oldsteps.ToString("0");
-            Walk.walkCount = _oldsteps;
-            Walk._walkingspeed = 100 * BTNCheck.factor/2  ;
+
+            if(!Walk.decrease)
+            {
+                _oldsteps = Walk.walkCount;
+                _oldsteps += (int)BTNCheck.factor;
+                _count.text = _oldsteps.ToString("0");
+                Walk.walkCount = _oldsteps;
+                Walk._walkingspeed = 100 * BTNCheck.factor / 2;
+            }
+           
         }
     }
 }

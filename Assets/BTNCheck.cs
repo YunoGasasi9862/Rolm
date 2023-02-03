@@ -12,6 +12,7 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     [SerializeField] Canvas canv;
     public static float factor = 1f;
     public static bool running = false;
+    public static bool runForRed = false;
     private void Start()
     {
         
@@ -38,6 +39,13 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
             if (currentTag=="RBTN")
             {
                 Walk.decrease = true;
+                runForRed = true;
+
+            }
+            else
+            {
+                runForRed = false;
+
             }
         }
     }
@@ -61,6 +69,7 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
         //moving elements in Unity
         //requires canvas
 
+        
         
       
 
