@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class WalkCount : MonoBehaviour
 {
-    private Text _count;
+    public static Text _count;
     private int _oldsteps;
+    private float Timer = 0;
     private void Start()
     {
         _count= GetComponent<Text>();   
@@ -24,13 +25,20 @@ public class WalkCount : MonoBehaviour
 
             if(!Walk.decrease)
             {
-                _oldsteps = Walk.walkCount;
-                _oldsteps += (int)BTNCheck.factor;
-                _count.text = _oldsteps.ToString("0");
-                Walk.walkCount = _oldsteps;
-                Walk._walkingspeed = 100 * BTNCheck.factor / 2;
+                 Timer += Time.deltaTime;
+                if(Timer>.2f)
+                {
+                    _oldsteps = Walk.walkCount;
+                    _oldsteps += (int)BTNCheck.factor;
+                    _count.text = _oldsteps.ToString("0");
+                    Walk.walkCount = _oldsteps;
+                    Walk._walkingspeed = 100 * BTNCheck.factor;
+                    Timer = 0f;
+                }
+                
             }
            
         }
+
     }
 }

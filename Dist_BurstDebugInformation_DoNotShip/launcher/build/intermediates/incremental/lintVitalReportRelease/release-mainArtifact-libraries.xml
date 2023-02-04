@@ -1,0 +1,19 @@
+<libraries>
+  <library
+      name="D:\Rolm\Dist_BurstDebugInformation_DoNotShip@@:unityLibrary::release"
+      jars="D:\Rolm\Dist_BurstDebugInformation_DoNotShip\unityLibrary\build\.transforms\5d53d975320c084347fe57a20493f0b8\transformed\out\jars\classes.jar;D:\Rolm\Dist_BurstDebugInformation_DoNotShip\unityLibrary\build\.transforms\5d53d975320c084347fe57a20493f0b8\transformed\out\jars\libs\unity-classes.jar"
+      resolved="Dist_BurstDebugInformation_DoNotShip:unityLibrary:unspecified"
+      folder="D:\Rolm\Dist_BurstDebugInformation_DoNotShip\unityLibrary\build\.transforms\5d53d975320c084347fe57a20493f0b8\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="__local_aars__:D:\Rolm\Dist_BurstDebugInformation_DoNotShip\unityLibrary\libs\unity-classes.jar:unspecified@jar"
+      jars="D:\Rolm\Dist_BurstDebugInformation_DoNotShip\unityLibrary\libs\unity-classes.jar"
+      resolved="__local_aars__:D:\Rolm\Dist_BurstDebugInformation_DoNotShip\unityLibrary\libs\unity-classes.jar:unspecified"/>
+</libraries>

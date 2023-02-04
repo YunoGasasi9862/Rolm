@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PenaltyText : MonoBehaviour
 {
-    private Text penalty;
+    public static Text penalty;
     private int _oldsteps;
+    private float Timer;
     private void Start()
     {
         penalty = GetComponent<Text>();
@@ -24,11 +25,19 @@ public class PenaltyText : MonoBehaviour
 
             if(Walk.decrease)
             {
-                _oldsteps = Walk.penaltyCount;
-                _oldsteps -= (int)BTNCheck.factor;
-                penalty.text = _oldsteps.ToString("0");
-                Walk.penaltyCount = _oldsteps;
-                Walk._walkingspeed = 100 * BTNCheck.factor / 2;
+                Timer += Time.deltaTime;
+                if (Timer > .2f)
+                {
+
+                    _oldsteps = Walk.penaltyCount;
+                    _oldsteps -= (int)BTNCheck.factor;
+                    penalty.text = _oldsteps.ToString("0");
+                    Walk.penaltyCount = _oldsteps;
+                    Walk._walkingspeed = 100 * BTNCheck.factor;
+                    Timer = 0f;
+
+                }
+                 
             }
                 
             

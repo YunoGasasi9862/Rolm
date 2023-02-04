@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,7 +41,8 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
             {
                 Walk.decrease = true;
                 runForRed = true;
-
+                Walk._shouldWalk = true;
+                Walk.anim.SetBool("Walk", true);
             }
             else
             {
@@ -52,35 +54,34 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public void OnPointerDown(PointerEventData eventData)
     {
         buttonPressed = true;
+     
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         buttonPressed = false;
-
+     
     }
     public void OnDrag(PointerEventData data)
     {
         running = true;
         Vector2 position;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            (RectTransform)canv.transform, data.position,
-            canv.worldCamera, out position);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)
+            canv.transform, data.position, canv.worldCamera, out position);
         //moving elements in Unity
         //requires canvas
 
-        
-        
       
 
          if(position.y < _BTNtransform.y+15 && position.y > _BTNtransform.y -15 && position.x > _BTNtransform.x - 200 && position.x<=_BTNtransform.x)
         {
             transform.position = canv.transform.TransformPoint(position);
+            factor = (Mathf.Abs(position.x - _BTNtransform.x) / 100.0f) + 1;
+
         }
 
 
-         factor=(Mathf.Abs(position.x- _BTNtransform.x)/100.0f) +1;
-        
+
         //this is the way you set position on canvas
     }
 

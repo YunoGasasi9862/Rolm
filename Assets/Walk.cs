@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
+
 public class Walk : MonoBehaviour
 {
     private bool once;
-    private Animator anim;
+    public static Animator anim;
     private Rigidbody2D rb;
     public static bool _shouldWalk;
    public static float _walkingspeed=100;
@@ -22,7 +24,11 @@ public class Walk : MonoBehaviour
     [SerializeField] GameObject PenaltyUI;
     float _timer;
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 120;
 
+    }
     private void Start()
     {
         anim= GetComponent<Animator>();
@@ -211,8 +217,19 @@ public class Walk : MonoBehaviour
         }
         else
         {
+            if(!BTNCheck.runForRed)
+            {
+                Vector2 velocity = rb.velocity;
+                velocity.x = 0f;
+                rb.velocity = velocity;
+            }
+             
+           
+       
+        }
 
-        
+        if(!_shouldWalk)
+        {
             Vector2 velocity = rb.velocity;
             velocity.x = 0f;
             rb.velocity = velocity;
@@ -221,9 +238,9 @@ public class Walk : MonoBehaviour
 
     public void StepCount()
     {
-        if(!BTNCheck.running)
+        if(!BTNCheck.running && !BTNCheck.runForRed)
         {
-                    walkCount++;
+             walkCount++;
 
         }
       

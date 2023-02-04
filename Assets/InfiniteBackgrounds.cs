@@ -25,7 +25,7 @@ public class InfiniteBackgrounds : MonoBehaviour
 
         if(temp > startPos + length)
         {
-            startPos += 1.898f*length;
+            startPos += 1.89f*length;
         }
     }
 }

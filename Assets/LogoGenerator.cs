@@ -9,10 +9,7 @@ public class LogoGenerator : MonoBehaviour
     [SerializeField] float minX, maxX;
     [SerializeField] GameObject Logo;
     private GameObject tempLogo;
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -27,10 +24,19 @@ public class LogoGenerator : MonoBehaviour
         }
 
         if(pastTheLogo())
-        {
+            {
+         
+                Walk.walkCount += Walk.penaltyCount;
+
+                Walk.penaltyCount = 0;
+             WalkCount._count.text = Walk.walkCount.ToString("0");
+            PenaltyText.penalty.text = Walk.penaltyCount.ToString("0");
+
             isGenerated = false;
+            Destroy(tempLogo, 5f);
+
         }
-        
+
     }
 
     private float ReturnGeneratedDistance()
@@ -41,11 +47,15 @@ public class LogoGenerator : MonoBehaviour
 
     private bool pastTheLogo()
     {
-        if(tempLogo.transform.position.x < Player.transform.position.x)
-        {
-            return true;
-        }
+       
+           if (tempLogo.transform.position.x < Player.transform.position.x)
+            {
+                return true;
+            }
+
+    
 
         return false;
+
     }
 }

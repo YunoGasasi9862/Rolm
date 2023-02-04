@@ -1,0 +1,16 @@
+<dependencies>
+  <compile
+      roots="D:\Rolm\Dist_BurstDebugInformation_DoNotShip@@:unityLibrary::release">
+    <dependency
+        name="D:\Rolm\Dist_BurstDebugInformation_DoNotShip@@:unityLibrary::release"
+        simpleName="Dist_BurstDebugInformation_DoNotShip:unityLibrary"/>
+  </compile>
+  <package
+      roots="D:\Rolm\Dist_BurstDebugInformation_DoNotShip@@:unityLibrary::release,__local_aars__:D:\Rolm\Dist_BurstDebugInformation_DoNotShip\unityLibrary\libs\unity-classes.jar:unspecified@jar">
+    <dependency
+        name="D:\Rolm\Dist_BurstDebugInformation_DoNotShip@@:unityLibrary::release"
+        simpleName="Dist_BurstDebugInformation_DoNotShip:unityLibrary"/>
+    <dependency
+        name="__local_aars__:D:\Rolm\Dist_BurstDebugInformation_DoNotShip\unityLibrary\libs\unity-classes.jar:unspecified@jar"/>
+  </package>
+</dependencies>
