@@ -79,8 +79,19 @@ public class Walk : MonoBehaviour
             }
         }
 
+        if(BTNCheck.running)
+        {
+            anim.SetBool("Run", true);
+        }
+        else
+        {
+            anim.SetBool("Run", false);
+           
 
-      
+        }
+
+
+
 
     }
 

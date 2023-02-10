@@ -9,7 +9,7 @@ public class LogoGenerator : MonoBehaviour
     [SerializeField] float minX, maxX;
     [SerializeField] GameObject Logo;
     private GameObject tempLogo;
-
+    private int heightofLogo=3;
 
     // Update is called once per frame
     void Update()
@@ -17,7 +17,7 @@ public class LogoGenerator : MonoBehaviour
         if(!isGenerated)
         {
             float Distance = ReturnGeneratedDistance();
-            Vector3 deployDistance = new Vector3(Distance, Player.transform.position.y, Player.transform.position.z);
+            Vector3 deployDistance = new Vector3(Distance, Player.transform.position.y + heightofLogo, Player.transform.position.z);
             tempLogo = Instantiate(Logo, deployDistance, Quaternion.identity);
             isGenerated = true;
 
@@ -26,11 +26,11 @@ public class LogoGenerator : MonoBehaviour
         if(pastTheLogo())
             {
          
-                Walk.walkCount += Walk.penaltyCount;
+              //  Walk.walkCount += Walk.penaltyCount;
 
-                Walk.penaltyCount = 0;
-             WalkCount._count.text = Walk.walkCount.ToString("0");
-            PenaltyText.penalty.text = Walk.penaltyCount.ToString("0");
+             //   Walk.penaltyCount = 0;
+          //   WalkCount._count.text = Walk.walkCount.ToString("0");
+        
 
             isGenerated = false;
             Destroy(tempLogo, 5f);

@@ -14,18 +14,22 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public static float factor = 1f;
     public static bool running = false;
     public static bool runForRed = false;
+    private Vector2 _BorderTransform;
     private void Start()
     {
-        
-        RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)
-            canv.transform, transform.position, canv.worldCamera, out _BTNtransform);
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)canv.transform, transform.position,
+            canv.worldCamera, out _BTNtransform);
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)canv.transform, transform.parent.position,
+            canv.worldCamera, out _BorderTransform);
         //IM GONNA CRY!!
         //it worked
         //uses the transformutility, converts it to screentopointreactang
         //makes use of canv.transform to get the bounds and transform
         //transform.position for current position
         //canv.worldcamera for changing the position coordinates
-       
+
     }
     private void Update()
     {
@@ -68,6 +72,7 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
         Vector2 position;
         RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)
             canv.transform, data.position, canv.worldCamera, out position);
+
         //moving elements in Unity
         //requires canvas
 
@@ -76,8 +81,10 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
          if(position.y < _BTNtransform.y+15 && position.y > _BTNtransform.y -15 && position.x > _BTNtransform.x - 200 && position.x<=_BTNtransform.x)
         {
             transform.position = canv.transform.TransformPoint(position);
-            factor = (Mathf.Abs(position.x - _BTNtransform.x) / 100.0f) + 1;
+            transform.parent.position = canv.transform.TransformPoint(position);
 
+              factor = (Mathf.Abs(position.x - _BTNtransform.x) / 100.0f) + 1;
+    
         }
 
 
@@ -87,6 +94,7 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public void OnEndDrag(PointerEventData data)
     {
+        transform.parent.position = canv.transform.TransformPoint(_BorderTransform);
         transform.position = canv.transform.TransformPoint(_BTNtransform);
         running = false;
     }
