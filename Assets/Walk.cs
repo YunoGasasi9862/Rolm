@@ -82,6 +82,12 @@ public class Walk : MonoBehaviour
         if(BTNCheck.running)
         {
             anim.SetBool("Run", true);
+            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Character") || !anim.GetCurrentAnimatorStateInfo(0).IsName("New State"))
+            {
+                anim.speed = BTNCheck.factor-.4f;
+
+            }
+
         }
         else
         {
