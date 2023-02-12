@@ -8,6 +8,7 @@ public class ResetPenalty : MonoBehaviour
     // Start is called before the first frame update
     private float _cameraWidth;
     [SerializeField] GameObject Logo;
+    [SerializeField] GameObject Redirect;
     private bool _canResetPenalty = false;
 
     void Start()
@@ -79,7 +80,7 @@ public class ResetPenalty : MonoBehaviour
 
         if(_canResetPenalty)
         {
-            Debug.Log("Hello");
+            Redirect.SetActive(true);
             _canResetPenalty = false;
         }
     }

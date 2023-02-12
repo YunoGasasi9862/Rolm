@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 590804843}
   - component: {fileID: 590804842}
   - component: {fileID: 590804841}
+  - component: {fileID: 590804844}
   m_Layer: 5
   m_Name: RedirectBTN
   m_TagString: Untagged
@@ -664,7 +665,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 590804842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 590804844}
+        m_TargetAssemblyTypeName: RedirectToSite, Assembly-CSharp
+        m_MethodName: TaketoSite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &590804842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,6 +716,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590804839}
   m_CullTransparentMesh: 1
+--- !u!114 &590804844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590804839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1c4128fddbce043a7fd623b20b6f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Redirect: {fileID: 1845681826}
+  Logo: {fileID: 0}
 --- !u!1 &745720939 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3587848709491409250, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
@@ -1677,6 +1704,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1845681826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 824839235, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+  m_PrefabInstance: {fileID: 3587848709832346889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1973559959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,6 +1882,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1455058084}
     m_Modifications:
+    - target: {fileID: 824839235, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3587848709240227860, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
       propertyPath: canv
       value: 
@@ -1958,6 +1994,10 @@ PrefabInstance:
       propertyPath: canv
       value: 
       objectReference: {fileID: 1455058083}
+    - target: {fileID: 6156164977503112878, guid: fd057f6d0b16ea6458b836666225b084, type: 3}
+      propertyPath: Redirect
+      value: 
+      objectReference: {fileID: 1845681826}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

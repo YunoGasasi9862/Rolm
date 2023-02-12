@@ -47,13 +47,16 @@ public class LogoGenerator : MonoBehaviour
 
     private bool pastTheLogo()
     {
-       
-           if (tempLogo.transform.position.x < Player.transform.position.x)
+       if(tempLogo!=null)
+        {
+            if (tempLogo.transform.position.x < Player.transform.position.x)
             {
                 return true;
             }
 
-    
+        }
+
+
 
         return false;
 
