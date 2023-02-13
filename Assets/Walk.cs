@@ -92,7 +92,9 @@ public class Walk : MonoBehaviour
         else
         {
             anim.SetBool("Run", false);
-           
+            anim.speed = 1;
+
+
 
         }
 
