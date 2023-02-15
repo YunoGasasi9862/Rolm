@@ -12,7 +12,6 @@ public class FollowPlayer : MonoBehaviour
         if (!ChangePlayer.PlayerGirl)
         {
             Player = GameObject.FindWithTag("PlayerB");
-            Debug.Log("True");
         }
         else
         {
