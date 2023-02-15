@@ -38,8 +38,18 @@ public class Walk : MonoBehaviour
 
     void Update()
     {
+        if (!ChangePlayer.PlayerGirl)
+        {
+            anim = GameObject.FindWithTag("PlayerB").GetComponent<Animator>();
+        }
+        else
+        {
+            anim = GameObject.FindWithTag("PlayerG").GetComponent<Animator>();
 
-        if(RandomColor.exportBTN!=null && !once)
+        }
+
+
+        if (RandomColor.exportBTN!=null && !once)
         {
             AddEventToBTN(RandomColor.exportBTN);
             once = true;

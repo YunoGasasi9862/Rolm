@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
-   
+    private GameObject Player;
 
-    // Update is called once per frame
+   
     void Update()
     {
-        if(transform.position.x < Player.transform.position.x)
+        if (!ChangePlayer.PlayerGirl)
         {
-            transform.position = new Vector3(Player.transform.position.x, transform.position.y,-10);
+            Player = GameObject.FindWithTag("PlayerB");
+            Debug.Log("True");
         }
+        else
+        {
+            Player = GameObject.FindWithTag("PlayerG");
+
+        }
+
+        if (Player!=null)
+        {
+            if (transform.position.x < Player.transform.position.x)
+            {
+                transform.position = new Vector3(Player.transform.position.x, transform.position.y, -10);
+            }
+        }
+       
     }
 }

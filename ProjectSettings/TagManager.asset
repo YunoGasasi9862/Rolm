@@ -11,6 +11,8 @@ TagManager:
   - BTN
   - logo
   - Setting
+  - PlayerG
+  - PlayerB
   layers:
   - Default
   - TransparentFX

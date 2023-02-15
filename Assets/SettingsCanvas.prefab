@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 752129704}
   - component: {fileID: 752129703}
   - component: {fileID: 752129702}
+  - component: {fileID: 1629328383}
   m_Layer: 5
   m_Name: BoyAvatar
   m_TagString: Untagged
@@ -120,7 +121,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 752129703}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1629328383}
+        m_TargetAssemblyTypeName: ChangePlayer, Assembly-CSharp
+        m_MethodName: ChangeToBoy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1629328383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752129700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd9225f6e4a05745a7050430e366680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1601515288
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +293,7 @@ GameObject:
   - component: {fileID: 1871637365}
   - component: {fileID: 1871637364}
   - component: {fileID: 1871637363}
+  - component: {fileID: 350389449}
   m_Layer: 5
   m_Name: GirlAvatar
   m_TagString: Untagged
@@ -376,7 +402,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1871637364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 350389449}
+        m_TargetAssemblyTypeName: ChangePlayer, Assembly-CSharp
+        m_MethodName: ChangeToGirl
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &350389449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871637361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd9225f6e4a05745a7050430e366680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6280926046585977579
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6280926047325430963
 RectTransform:
   m_ObjectHideFlags: 0

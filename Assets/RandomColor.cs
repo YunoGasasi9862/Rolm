@@ -13,7 +13,7 @@ public class RandomColor : MonoBehaviour
     private bool _randomTime = false;
     [SerializeField] Walk _walk;
     private int count = 0;
-    [SerializeField] Animator Player;
+    private Animator Player;
     private int previousColor=-1;
     // Start is called before the first frame update
     void Start()
@@ -56,8 +56,19 @@ public class RandomColor : MonoBehaviour
 
     private void Update()
     {
+
+        if (!ChangePlayer.PlayerGirl)
+        {
+            Player = GameObject.FindWithTag("PlayerB").GetComponent<Animator>();
+           
+        }
+        else
+        {
+            Player = GameObject.FindWithTag("PlayerG").GetComponent<Animator>();
+
+        }
         //random seconds between 6-15
-        if(_randomTime)
+        if (_randomTime)
         {
             int RandomNumber = Random.Range(6, 16);
            StartCoroutine(CountTime(RandomNumber));
