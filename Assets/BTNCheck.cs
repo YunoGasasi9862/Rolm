@@ -80,10 +80,9 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
          if(position.y < _BTNtransform.y+15 && position.y > _BTNtransform.y -15 && position.x > _BTNtransform.x - 200 && position.x<=_BTNtransform.x)
         {
-            transform.position = canv.transform.TransformPoint(position);
             transform.parent.position = canv.transform.TransformPoint(position);
 
-              factor = (Mathf.Abs(position.x - _BTNtransform.x) / 100.0f) + 1;
+            factor = (Mathf.Abs(position.x - _BTNtransform.x) / 100.0f) + 1;
     
         }
 
