@@ -248,9 +248,7 @@ public class Walk : MonoBehaviour
         {
             if(!BTNCheck.runForRed)
             {
-                Vector2 velocity = rb.velocity;
-                velocity.x = 0f;
-                rb.velocity = velocity;
+               
             }
              
            

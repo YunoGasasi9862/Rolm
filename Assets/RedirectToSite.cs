@@ -5,11 +5,13 @@ using UnityEngine;
 public class RedirectToSite : MonoBehaviour
 {
     [SerializeField] GameObject Redirect;
-    [SerializeField] GameObject Logo;
+    [SerializeField] GameObject[] Logo;
 
-    private void Start()
+
+    private void Update()
     {
-        Logo = GameObject.FindWithTag("logo");
+        Logo = GameObject.FindGameObjectsWithTag("logo");
+
     }
     public void TaketoSite()
     {
@@ -17,7 +19,20 @@ public class RedirectToSite : MonoBehaviour
         Application.OpenURL("https://rolm.io/shop");
         Redirect.SetActive(false);
         Walk.penaltyCount = 0;
-        Destroy(Logo);
-       
+        for (int i = 0; i < Logo.Length; i++)
+        {
+            Destroy(Logo[i]);
+        }
+     
+        Invoke("SetToFalse",.5f);
+
+
+
+    }
+
+    public void SetToFalse()
+    {
+        LogoGenerator.isGenerated = false;
+
     }
 }

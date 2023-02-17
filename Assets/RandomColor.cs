@@ -70,7 +70,7 @@ public class RandomColor : MonoBehaviour
         //random seconds between 6-15
         if (_randomTime)
         {
-            int RandomNumber = Random.Range(6, 16);
+            int RandomNumber = Random.Range(2, 6);
            StartCoroutine(CountTime(RandomNumber));
             GenerateColor();
 
@@ -116,7 +116,7 @@ public class RandomColor : MonoBehaviour
 
     IEnumerator CountTime(int RR)
     {
-        while (_timecount < RR * 3)
+        while (_timecount < RR)
         {
             _timecount += Time.deltaTime;
             yield return null;

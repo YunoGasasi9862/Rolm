@@ -51,6 +51,8 @@ public class BTNCheck : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
             else
             {
                 runForRed = false;
+                Walk._shouldWalk = true;
+
 
             }
         }
