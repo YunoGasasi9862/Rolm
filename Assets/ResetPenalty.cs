@@ -10,6 +10,9 @@ public class ResetPenalty : MonoBehaviour
     [SerializeField] GameObject Logo;
     [SerializeField] GameObject Redirect;
     private bool _canResetPenalty = false;
+    [SerializeField] GameObject WarningUI;
+    private bool Disappear = false;
+    private float Timer;
 
     void Start()
     {
@@ -21,41 +24,39 @@ public class ResetPenalty : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /** if(Input.GetMouseButtonDown(0))
+
+        if (Input.GetMouseButtonDown(0))  //for warning!
         {
-            RaycastHit hit; //declaration of ray
-          Ray ray= Camera.main.ScreenPointToRay(Input.mousePosition);
-            //getting ray Camera.Main.screenpointtoRay
+            RaycastHit rayCH;  //for storing the ray value
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out hit))  //passes ray as target, and outputs into hit
+            if (Physics.Raycast(ray, out rayCH))
             {
-                if(hit.collider.tag=="logo")
+                if (rayCH.collider.tag == "logo")
                 {
-                    //play animation
-
-                     
-                    //reset Penalty
-                    Walk.penaltyCount = 0;
-
-
-                    //destroy gameobject
-                    Destroy(gameObject);
-
-
-                    //respawn logo again somewhere
-
-                    LogoGenerator.isGenerated = false;
-
-
-
-
-
+                    WarningUI.SetActive(true);
+                    Disappear = true;
 
                 }
+
+            }
+
+        }
+
+        if (Disappear)
+        {
+            Timer += Time.deltaTime;
+
+            if (Timer > 3f)
+            {
+                WarningUI.SetActive(false);
+                Disappear = false;
+                Timer = 0f;
             }
         }
-       **/
-       if (Logo == null)
+
+
+        if (Logo == null)
         {
             Logo = GameObject.FindWithTag("logo");
         }

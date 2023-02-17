@@ -7,6 +7,7 @@ public class PenaltyText : MonoBehaviour
     public static Text penalty;
     private int _oldsteps;
     private float Timer;
+
     private void Start()
     {
         penalty = GetComponent<Text>();
