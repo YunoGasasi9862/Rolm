@@ -46,7 +46,7 @@ public class LogoGenerator : MonoBehaviour
     {
        if(tempLogo!=null)
         {
-
+           
             if (!ChangePlayer.PlayerGirl)
             {
                 Player = GameObject.FindWithTag("PlayerB");

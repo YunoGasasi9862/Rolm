@@ -9,15 +9,21 @@ public class FollowPlayer : MonoBehaviour
    
     void Update()
     {
-        if (!ChangePlayer.PlayerGirl)
-        {
-            Player = GameObject.FindWithTag("PlayerB");
-        }
-        else
-        {
-            Player = GameObject.FindWithTag("PlayerG");
 
-        }
+       
+       
+            if (!ChangePlayer.PlayerGirl)
+            {
+                Player = GameObject.FindWithTag("PlayerB");
+            }
+            else
+            {
+                Player = GameObject.FindWithTag("PlayerG");
+
+            }
+       
+
+       
 
         if (Player!=null)
         {
