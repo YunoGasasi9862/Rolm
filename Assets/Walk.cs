@@ -272,4 +272,15 @@ public class Walk : MonoBehaviour
         }
       
     }
+
+    public void TurnonFlash()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void TurnOfFlash()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+
+    }
 }

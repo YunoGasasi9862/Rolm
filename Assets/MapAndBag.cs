@@ -28,7 +28,7 @@ public class MapAndBag : MonoBehaviour
         if(_map)
         {
             timer1 += Time.deltaTime;
-            if(timer1 > 3f)
+            if(timer1 > 2f)
             {
                 Map.SetActive(false);
                 _map = false;
@@ -38,7 +38,7 @@ public class MapAndBag : MonoBehaviour
         if (_bag)
         {
             timer2 += Time.deltaTime;
-            if (timer2 > 3f)
+            if (timer2 >2f)
             {
                 Bag.SetActive(false);
                 _bag = false;

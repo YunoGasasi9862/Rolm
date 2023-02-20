@@ -22,11 +22,11 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -473450202, guid: 6d6d0d5d33d688348a0c8fad7002f472, type: 3}
-    - time: 0.125
+    - time: 0.083333336
       value: {fileID: 1290252480, guid: 6d6d0d5d33d688348a0c8fad7002f472, type: 3}
-    - time: 0.25
+    - time: 0.16666667
       value: {fileID: 124837349, guid: 6d6d0d5d33d688348a0c8fad7002f472, type: 3}
-    - time: 0.41666666
+    - time: 0.25
       value: {fileID: 382382031, guid: 6d6d0d5d33d688348a0c8fad7002f472, type: 3}
     - time: 0.5416667
       value: {fileID: 205133965, guid: 6d6d0d5d33d688348a0c8fad7002f472, type: 3}
@@ -96,4 +96,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.75
+    functionName: TurnonFlash
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.9583333
+    functionName: TurnOfFlash
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

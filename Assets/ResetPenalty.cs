@@ -8,7 +8,6 @@ public class ResetPenalty : MonoBehaviour
     // Start is called before the first frame update
     private float _cameraWidth;
     [SerializeField] GameObject Logo;
-    [SerializeField] GameObject Redirect;
     private bool takeflash = false;
     [SerializeField] GameObject WarningUI;
     private bool Disappear = false;
@@ -61,7 +60,7 @@ public class ResetPenalty : MonoBehaviour
         {
             Timer += Time.deltaTime;
 
-            if (Timer > 3f)
+            if (Timer > 2f)
             {
                 WarningUI.SetActive(false);
                 Disappear = false;
@@ -114,9 +113,10 @@ public class ResetPenalty : MonoBehaviour
         {
             Player.GetComponent<Animator>().SetBool("Flash", true);
 
-            // Redirect.SetActive(true);
             once = true;
             takeflash = false;
         }
     }
+
+    
 }
