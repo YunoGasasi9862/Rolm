@@ -22,23 +22,17 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1906466610, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 0.125
+    - time: 0.083333336
       value: {fileID: 957195457, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 0.20833333
-      value: {fileID: 2038990338, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 0.29166666
+    - time: 0.125
       value: {fileID: 75430796, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 0.5833333
+    - time: 0.20833333
       value: {fileID: -316455728, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 0.7083333
+    - time: 0.29166666
       value: {fileID: 669997227, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 0.7916667
-      value: {fileID: -394571178, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 0.9583333
+    - time: 0.41666666
       value: {fileID: -261575657, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 1.0416666
-      value: {fileID: 1045886875, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - time: 1.1666666
+    - time: 0.5
       value: {fileID: 2136316040, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
     attribute: m_Sprite
     path: 
@@ -64,20 +58,17 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: -1906466610, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
     - {fileID: 957195457, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - {fileID: 2038990338, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
     - {fileID: 75430796, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
     - {fileID: -316455728, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
     - {fileID: 669997227, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - {fileID: -394571178, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
     - {fileID: -261575657, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
-    - {fileID: 1045886875, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
     - {fileID: 2136316040, guid: 7cf327f9925891143900451c85a5ec26, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.2083333
+    m_StopTime: 0.5416667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -97,14 +88,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.75
+  - time: 0.20833333
     functionName: TurnonFlash
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.9166667
+  - time: 0.375
     functionName: TurnOfFlash
     data: 
     objectReferenceParameter: {fileID: 0}
