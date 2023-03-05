@@ -103,7 +103,7 @@ public class Walk : MonoBehaviour
         {
             anim.SetBool("Run", false);
             anim.speed = 1;
-
+            
 
 
         }
@@ -244,16 +244,7 @@ public class Walk : MonoBehaviour
             }
 
         }
-        else
-        {
-            if(!BTNCheck.runForRed)
-            {
-               
-            }
-             
-           
-       
-        }
+        
 
         if(!_shouldWalk)
         {

@@ -1065,7 +1065,7 @@ GameObject:
   - component: {fileID: 1387874618}
   - component: {fileID: 1387874617}
   - component: {fileID: 1387874616}
-  - component: {fileID: 8572990794751880023}
+  - component: {fileID: 149396134}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8572990794751880023}
+      - m_Target: {fileID: 149396134}
         m_TargetAssemblyTypeName: OpenSettingsPanel, Assembly-CSharp
         m_MethodName: OpenSettingPanel
         m_Mode: 1
@@ -1187,7 +1187,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8572990794751880023
+--- !u!114 &149396134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a08ddc21c229e0459f6b6e78d1301af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelPrefab: {fileID: 0}
+  panelPrefab: {fileID: 6280926047325430967, guid: c7da0ed76abd456498ba34b237aeccc2, type: 3}
 --- !u!1 &1980776410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1868,7 @@ GameObject:
   - component: {fileID: 3587848708370155021}
   - component: {fileID: 3587848708370155023}
   - component: {fileID: 3587848708370155020}
-  - component: {fileID: 3587848708370155022}
+  - component: {fileID: 50677034}
   m_Layer: 5
   m_Name: SC
   m_TagString: Untagged
@@ -1940,7 +1940,7 @@ MonoBehaviour:
   m_Text: '0
 
 '
---- !u!114 &3587848708370155022
+--- !u!114 &50677034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2870,7 +2870,7 @@ GameObject:
   - component: {fileID: 3587848709862245048}
   - component: {fileID: 3587848709862245050}
   - component: {fileID: 3587848709862245051}
-  - component: {fileID: 3587848709862245053}
+  - component: {fileID: 280514561}
   m_Layer: 5
   m_Name: SC
   m_TagString: Untagged
@@ -2942,7 +2942,7 @@ MonoBehaviour:
   m_Text: '0
 
 '
---- !u!114 &3587848709862245053
+--- !u!114 &280514561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
