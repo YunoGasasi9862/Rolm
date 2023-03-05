@@ -22,6 +22,7 @@ public class Walk : MonoBehaviour
     private bool redOnce = false;
     public static float vibration;
     [SerializeField] GameObject PenaltyUI;
+    private bool sliding;
     float _timer;
 
     private void Awake()
@@ -99,6 +100,7 @@ public class Walk : MonoBehaviour
             }
 
             anim.SetBool("sliding", true);
+            sliding = true;
 
 
         }
@@ -115,8 +117,17 @@ public class Walk : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Character"))
         {
             anim.SetBool("sliding", false);
+            sliding = false;
+            Vector2 velocity = rb.velocity;
+            velocity.x = 0f;
+            rb.velocity = velocity;
 
 
+        }
+
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Sliding"))
+        {
+            rb.AddForce(Vector2.right * 5f * Time.deltaTime, ForceMode2D.Impulse);
         }
 
 
@@ -179,9 +190,6 @@ public class Walk : MonoBehaviour
 
 
             AddEventRedBtns();
-
-
-
 
         });
 
@@ -255,7 +263,7 @@ public class Walk : MonoBehaviour
         }
         
 
-        if(!_shouldWalk)
+        if(!_shouldWalk && !sliding)
         {
             Vector2 velocity = rb.velocity;
             velocity.x = 0f;

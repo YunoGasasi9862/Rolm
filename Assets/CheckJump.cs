@@ -43,7 +43,7 @@ public class CheckJump : MonoBehaviour
     public void CanJump()
     {
             
-        if(Physics2D.Raycast(Player.transform.position, Vector2.down, 1f, Ground))
+        if(Physics2D.Raycast(Player.transform.position, Vector2.down, 1f, Ground) && anim.GetCurrentAnimatorStateInfo(0).IsName("New State"))
          {
 
                  jumpAllow = true;
