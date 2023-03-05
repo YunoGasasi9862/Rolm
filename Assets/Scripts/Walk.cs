@@ -98,17 +98,26 @@ public class Walk : MonoBehaviour
 
             }
 
+            anim.SetBool("sliding", true);
+
+
         }
         else
         {
             anim.SetBool("Run", false);
+
             anim.speed = 1;
             
 
 
         }
 
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Character"))
+        {
+            anim.SetBool("sliding", false);
 
+
+        }
 
 
     }
