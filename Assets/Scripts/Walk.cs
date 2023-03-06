@@ -22,6 +22,7 @@ public class Walk : MonoBehaviour
     private bool redOnce = false;
     public static float vibration;
     [SerializeField] GameObject PenaltyUI;
+    [SerializeField] Toggle _vib;
     private bool sliding;
     float _timer;
 
@@ -35,6 +36,7 @@ public class Walk : MonoBehaviour
         anim= GetComponent<Animator>();
         rb= GetComponent<Rigidbody2D>();
         PenaltyUI.SetActive(false);
+
     }
 
     void Update()
@@ -73,9 +75,14 @@ public class Walk : MonoBehaviour
 
             vibration += Time.deltaTime;
 
-            if(vibration>10f)
+            if(vibration>5f)
             {
-                Handheld.Vibrate();
+
+                if(_vib.isOn)
+                {
+                    Handheld.Vibrate();
+
+                }
             }
 
 
