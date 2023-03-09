@@ -6,14 +6,14 @@ TagManager:
   tags:
   - BG1
   - BG2
-  - Pen
-  - RBTN
-  - BTN
   - logo
   - Setting
   - PlayerG
   - PlayerB
   - Vibration
+  - Warning
+  - EasyClockTimer
+  - GO
   layers:
   - Default
   - TransparentFX

@@ -24,40 +24,46 @@ public class Movement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void Update()
     {
         Player = GameObject.FindWithTag("PlayerG") ? GameObject.FindWithTag("PlayerG") : GameObject.FindWithTag("PlayerB");
-          
-           if(_btnRightPressed)
-           {
 
-                  Player.transform.Translate(_runningSpeed * Time.deltaTime, 0, 0);  
-                  sr.flipX = false;
+        
+        if(LevelChecker.GameOver==false)
+        {
+            if (_btnRightPressed)
+            {
 
-           }
+                Player.transform.Translate(_runningSpeed * Time.deltaTime, 0, 0);
+                sr.flipX = false;
+
+            }
 
             if (_btnLeftPressed)
             {
-                    Player.transform.Translate(-_runningSpeed * Time.deltaTime, 0, 0);
-                    sr.flipX = true;
+                Player.transform.Translate(-_runningSpeed * Time.deltaTime, 0, 0);
+                sr.flipX = true;
 
             }
 
-            if(_btnLeftPressed || _btnRightPressed)
+            if (_btnLeftPressed || _btnRightPressed)
             {
-                 anim.SetBool("Run", true);
+                anim.SetBool("Run", true);
             }
-           
-            if(anim.GetCurrentAnimatorStateInfo(0).IsName("Sliding"))
+
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Sliding"))
             {
-                 if(sr.flipX)
-                 {
-                     rb.AddForce(-transform.right * 5f * Time.deltaTime, ForceMode2D.Impulse);
-                 }
-                  else
-                  {
-                     rb.AddForce(transform.right * 5f * Time.deltaTime, ForceMode2D.Impulse);
+                if (sr.flipX)
+                {
+                    rb.AddForce(-transform.right * 5f * Time.deltaTime, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rb.AddForce(transform.right * 5f * Time.deltaTime, ForceMode2D.Impulse);
 
-                    }
+                }
 
+            }
         }
+          
+          
         
 
     }   

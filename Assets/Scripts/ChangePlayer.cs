@@ -23,10 +23,6 @@ public class ChangePlayer : MonoBehaviour
         }
 
         SettingUI.SetActive(false);
-
-
-       
-       
     }
 
     public void ChangeToGirl()

@@ -4,70 +4,32 @@ using UnityEngine;
 
 public class LogoGenerator : MonoBehaviour
 {
-    public static bool isGenerated = false;
-    [SerializeField] GameObject Player;
-    [SerializeField] float minX, maxX;
     [SerializeField] GameObject Logo;
-    private GameObject tempLogo;
-    private int heightofLogo=2;
-
+    [SerializeField] int NumberOfLogos;
+    [SerializeField] float HeightOfLogo;
+    private float width, height;
     // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
-        if(!isGenerated)
+        height =2f *  Camera.main.orthographicSize; //gives the full height
+        width = height * Camera.main.aspect;//gives the width
+
+
+        //generating all the logos once
+        float distanceBetweenLogos = width / NumberOfLogos;
+        for (int i=0; i<NumberOfLogos; i++)
         {
-          
 
-            float Distance = ReturnGeneratedDistance();
-            Vector3 deployDistance = new Vector3(Distance, Player.transform.position.y + heightofLogo, Player.transform.position.z);
-            tempLogo = Instantiate(Logo, deployDistance, Quaternion.identity);
-            isGenerated = true;
+            Vector2 LogoPos = new Vector2(Logo.transform.position.x + (distanceBetweenLogos * (float)(i-1.5)), Logo.transform.position.y + HeightOfLogo);
 
-        }
-
-        if(pastTheLogo())
-        {
-        
-
-            isGenerated = false;
-            Destroy(tempLogo, 3f);
+           GameObject _logo= Instantiate(Logo, LogoPos, Logo.transform.rotation);
+            _logo.GetComponent<SpriteRenderer>().enabled = false;
 
         }
 
     }
+   
 
-    private float ReturnGeneratedDistance()
-    {
-        float Distance = Random.Range(minX, maxX);
-        return Player.transform.position.x + Distance;
-    }
-
-    private bool pastTheLogo()
-    {
-       if(tempLogo!=null)
-        {
-           
-            if (!ChangePlayer.PlayerGirl)
-            {
-                Player = GameObject.FindWithTag("PlayerB");
-            }
-            else
-            {
-                Player = GameObject.FindWithTag("PlayerG");
-
-            }
-
-
-            if (tempLogo.transform.position.x < Player.transform.position.x)
-            {
-                return true;
-            }
-
-        }
-
-
-
-        return false;
-
-    }
+  
 }

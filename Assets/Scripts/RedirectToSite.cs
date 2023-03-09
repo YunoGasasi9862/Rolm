@@ -32,7 +32,7 @@ public class RedirectToSite : MonoBehaviour
 
     public void SetToFalse()
     {
-        LogoGenerator.isGenerated = false;
+       // LogoGenerator.isGenerated = false;
 
     }
 }
